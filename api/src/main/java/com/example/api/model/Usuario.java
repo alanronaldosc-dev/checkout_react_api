@@ -23,6 +23,7 @@ public class Usuario {
     private String nombre;
     private String apellidos;
     private String correo;
+    private String password;
 
     @Field("tipo_usuario")
     private String tipoUsuario;

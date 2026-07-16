@@ -29,6 +29,7 @@ public class UsuarioDTO {
     @Email(message = "El correo no tiene un formato válido")
     private String correo;
 
+    private String password;
     private String tipoUsuario;
     private String estado;
 

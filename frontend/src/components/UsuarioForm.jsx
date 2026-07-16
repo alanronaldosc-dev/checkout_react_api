@@ -4,11 +4,13 @@ const EMPTY = {
   nombre: '',
   apellidos: '',
   correo: '',
+  password: '',
   tipoUsuario: '1',
   estado: 'activo',
   detallesLaborales: { departamento: '', puesto: '', nomina_matricula: '' },
   biometria: { huella_digital_template: '', foto_perfil_url: '' },
 };
+
 
 export default function UsuarioForm({ inicial, onSubmit, onCancel }) {
   const [form, setForm] = useState(EMPTY);
@@ -68,6 +70,17 @@ export default function UsuarioForm({ inicial, onSubmit, onCancel }) {
             </select>
           </label>
         </div>
+        <label style={lbl}>
+          Contraseña {!inicial && '*'}
+          <input
+            style={inp}
+            type="password"
+            value={form.password}
+            onChange={(e) => set('password', e.target.value)}
+            required={!inicial}
+            placeholder={inicial ? 'Dejar vacío para no cambiar' : ''}
+          />
+        </label>
         <label style={lbl}>
           Estado
           <select style={inp} value={form.estado} onChange={(e) => set('estado', e.target.value)}>

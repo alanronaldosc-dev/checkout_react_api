@@ -49,10 +49,12 @@ public class UsuarioService {
         existing.setNombre(dto.getNombre());
         existing.setApellidos(dto.getApellidos());
         existing.setCorreo(dto.getCorreo());
+        existing.setPassword(dto.getPassword());          // ← agregar
         existing.setTipoUsuario(dto.getTipoUsuario());
         existing.setEstado(dto.getEstado());
         existing.setDetallesLaborales(dto.getDetallesLaborales());
         existing.setBiometria(dto.getBiometria());
+
 
         return toDTO(usuarioRepository.save(existing));
     }
@@ -83,10 +85,12 @@ public class UsuarioService {
                 .nombre(dto.getNombre())
                 .apellidos(dto.getApellidos())
                 .correo(dto.getCorreo())
+                .password(dto.getPassword())          // ← agregar
                 .tipoUsuario(dto.getTipoUsuario())
                 .estado(dto.getEstado())
                 .detallesLaborales(dto.getDetallesLaborales())
                 .biometria(dto.getBiometria())
                 .build();
     }
+
 }
